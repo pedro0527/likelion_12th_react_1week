@@ -11,14 +11,12 @@ const UseEffectTimerHw = () => {
 
     let timeLeft = {};
 
-    if (left > 0) {
-        timeLeft = {
-            일: Math.floor(left / (1000 * 60 * 60 * 24)),
-            시간: Math.floor((left / (1000 * 60 * 60)) % 24),
-            분: Math.floor((left / (1000 * 60)) % 60),
-            초: Math.floor((left / 1000) % 60)
+      timeLeft = {
+          일: Math.floor(left / (1000 * 60 * 60 * 24)),
+          시간: Math.floor((left / (1000 * 60 * 60)) % 24),
+          분: Math.floor((left / (1000 * 60)) % 60),
+          초: Math.floor((left / 1000) % 60)
         };
-    }
     return timeLeft;
 };
 
@@ -28,7 +26,7 @@ useEffect(() => {
     const timer = setTimeout(() => {
         setTimeLeft(calculateTimeLeft());
     }, 1000);
-    
+
     return () => {
       clearTimeout(timer);
     }
