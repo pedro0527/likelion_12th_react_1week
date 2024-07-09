@@ -28,6 +28,7 @@ useEffect(() => {
     const timer = setTimeout(() => {
         setTimeLeft(calculateTimeLeft());
     }, 1000);
+    
     return () => {
       clearTimeout(timer);
     }
