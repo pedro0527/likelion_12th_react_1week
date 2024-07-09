@@ -28,7 +28,6 @@ useEffect(() => {
     const timer = setTimeout(() => {
         setTimeLeft(calculateTimeLeft());
     }, 1000);
-
     return () => {
       clearTimeout(timer);
     }
@@ -40,7 +39,6 @@ Object.keys(timeLeft).forEach((interval) => {
     if (!timeLeft[interval]) {
         return;
     }
-
     timerComponents.push(
         <span key={interval}>
             {timeLeft[interval]}{interval}{" "}
@@ -56,5 +54,4 @@ return (
 );
 }
   
-
 export default UseEffectTimerHw;
